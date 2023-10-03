@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PaginaPrincipalComponent } from './pasajero/pagina-principal/pagina-principal.component';
 import { ReservaPrincipalComponent } from './reserva/reserva-principal/reserva-principal.component';
 import { TipousuarioPrincipalComponent } from './tipousuario/tipousuario-principal/tipousuario-principal.component';
 import { UsuarioPrincipalComponent } from './usuario/usuario-principal/usuario-principal.component';
+import { PasajeroPrincipalComponent } from './pasajero/pasajero-principal/pasajero-principal.component';
 
 const routes: Routes = [
 
   {
     path:'',
-    component: PaginaPrincipalComponent,
+    component: PasajeroPrincipalComponent,
     pathMatch:"full"
   },
   {
     path:'pasajero',
-    component: PaginaPrincipalComponent
+    component: PasajeroPrincipalComponent
   },
   {
     path:'reserva',

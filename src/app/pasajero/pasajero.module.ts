@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
+import { PasajeroPrincipalComponent } from './pasajero-principal/pasajero-principal.component';
 
 
 
 @NgModule({
   declarations: [
-    PaginaPrincipalComponent
+    PasajeroPrincipalComponent
+    
   ],
   imports: [
     CommonModule
