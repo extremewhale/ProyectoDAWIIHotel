@@ -7,10 +7,13 @@ import { PasajeroModule } from './pasajero/pasajero.module';
 import { ReservaModule } from './reserva/reserva.module';
 import { TipousuarioModule } from './tipousuario/tipousuario.module';
 import { UsuarioModule } from './usuario/usuario.module';
+import { LoginPrincipalComponent } from './login/login-principal/login-principal.component';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginPrincipalComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +21,8 @@ import { UsuarioModule } from './usuario/usuario.module';
     PasajeroModule,
     ReservaModule,
     TipousuarioModule,
-    UsuarioModule
+    UsuarioModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]

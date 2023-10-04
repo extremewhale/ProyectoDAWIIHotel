@@ -4,6 +4,7 @@ import { ReservaPrincipalComponent } from './reserva/reserva-principal/reserva-p
 import { TipousuarioPrincipalComponent } from './tipousuario/tipousuario-principal/tipousuario-principal.component';
 import { UsuarioPrincipalComponent } from './usuario/usuario-principal/usuario-principal.component';
 import { PasajeroPrincipalComponent } from './pasajero/pasajero-principal/pasajero-principal.component';
+import { LoginPrincipalComponent } from './login/login-principal/login-principal.component';
 
 const routes: Routes = [
 
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path:'usuario',
     component: UsuarioPrincipalComponent
+  },
+  {
+    path:'login',
+    component: LoginPrincipalComponent
   }
 
 ];
