@@ -5,6 +5,7 @@ import { TipousuarioPrincipalComponent } from './tipousuario/tipousuario-princip
 import { UsuarioPrincipalComponent } from './usuario/usuario-principal/usuario-principal.component';
 import { PasajeroPrincipalComponent } from './pasajero/pasajero-principal/pasajero-principal.component';
 import { LoginPrincipalComponent } from './login/login-principal/login-principal.component';
+import { HabitacionPrincipalComponent } from './habitacion/habitacion-principal/habitacion-principal.component';
 
 const routes: Routes = [
 
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path:'pasajero',
     component: PasajeroPrincipalComponent
+  },
+  {
+    path:'habitacion',
+    component: HabitacionPrincipalComponent
   },
   {
     path:'reserva',

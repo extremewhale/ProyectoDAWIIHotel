@@ -9,6 +9,9 @@ import { TipousuarioModule } from './tipousuario/tipousuario.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { LoginPrincipalComponent } from './login/login-principal/login-principal.component';
 import { LoginModule } from './login/login.module';
+import { TablaHabitacionComponent } from './habitacion/tabla-habitacion/tabla-habitacion.component';
+import { HabitacionPrincipalComponent } from './habitacion/habitacion-principal/habitacion-principal.component';
+import { HabitacionModule } from './habitacion/habitacion.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { LoginModule } from './login/login.module';
     ReservaModule,
     TipousuarioModule,
     UsuarioModule,
-    LoginModule
+    LoginModule,
+    HabitacionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
