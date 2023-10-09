@@ -1,10 +1,55 @@
 import { Injectable } from '@angular/core';
 import { Habitacion } from './interfaces/Habitacion';
+import { EstadoHabitacion } from './interfaces/EstadoHabitacion';
+import { Piso } from './interfaces/Piso';
+import { TipoHabitacion } from './interfaces/TipoHabitacion';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HabitacionService {
+  private _estadohabitaciones:EstadoHabitacion[]=[
+    {
+      idestadohabitacion:1,
+      nombreestadohabitacion:"Optimo Estado"
+    },
+    {
+      idestadohabitacion:2,
+      nombreestadohabitacion:"Mantenimiento"
+    },
+    {
+      idestadohabitacion:3,
+      nombreestadohabitacion:"Inoperativo"
+    }
+  ]
+  private _pisos:Piso[]=[
+    {
+      idpiso:1,
+      descpiso:"1° Piso"
+    },
+    {
+      idpiso:2,
+      descpiso:"2° Piso"
+    },
+    {
+      idpiso:3,
+      descpiso:"3° Piso"
+    }
+  ]
+  private _tipohabitaciones:TipoHabitacion[]=[
+      {
+        idtipohabitacion:1,
+        nombretipohabitacion:"Simple"
+      },
+      {
+        idtipohabitacion:2,
+        nombretipohabitacion:"Doble"
+      },
+      {
+        idtipohabitacion:3,
+        nombretipohabitacion:"Matrimonial"
+      }
+  ]
   private _habitacion: Habitacion[]=[
     {
       idhabitacion:1,
@@ -50,6 +95,18 @@ export class HabitacionService {
 
   get habitaciones():Habitacion[] {
     return [...this._habitacion];
+  }
+
+  get pisos():Piso[] {
+    return [...this._pisos];
+  }
+
+  get estadohabitaciones():EstadoHabitacion[] {
+    return [...this._estadohabitaciones];
+  }
+
+  get tipohabitaciones():TipoHabitacion[] {
+    return [...this._tipohabitaciones];
   }
 
   constructor() { }
