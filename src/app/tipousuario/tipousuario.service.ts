@@ -41,6 +41,12 @@ export class TipousuarioService {
     },
     {
       idmenu:4,
+      nombremenu:"Habitación",
+      iconomenu:"",
+      urlmenu:""
+    },
+    {
+      idmenu:5,
       nombremenu:"Reserva",
       iconomenu:"",
       urlmenu:""
