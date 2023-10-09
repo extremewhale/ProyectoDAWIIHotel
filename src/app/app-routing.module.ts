@@ -6,6 +6,10 @@ import { UsuarioPrincipalComponent } from './usuario/usuario-principal/usuario-p
 import { PasajeroPrincipalComponent } from './pasajero/pasajero-principal/pasajero-principal.component';
 import { LoginPrincipalComponent } from './login/login-principal/login-principal.component';
 import { HabitacionPrincipalComponent } from './habitacion/habitacion-principal/habitacion-principal.component';
+import { FormPasajeroComponent } from './pasajero/form-pasajero/form-pasajero.component';
+import { FormHabitacionComponent } from './habitacion/form-habitacion/form-habitacion.component';
+import { FormTipousuarioComponent } from './tipousuario/form-tipousuario/form-tipousuario.component';
+import { FormUsuarioComponent } from './usuario/form-usuario/form-usuario.component';
 
 const routes: Routes = [
 
@@ -19,8 +23,24 @@ const routes: Routes = [
     component: PasajeroPrincipalComponent
   },
   {
+    path:'pasajero/agregar',
+    component: FormPasajeroComponent
+  },
+  {
+    path:'pasajero/editar/:id',
+    component: FormPasajeroComponent
+  },
+  {
     path:'habitacion',
     component: HabitacionPrincipalComponent
+  },
+  {
+    path:'habitacion/agregar',
+    component: FormHabitacionComponent
+  },
+  {
+    path:'habitacion/editar/:id',
+    component: FormHabitacionComponent
   },
   {
     path:'reserva',
@@ -31,8 +51,24 @@ const routes: Routes = [
     component: TipousuarioPrincipalComponent
   },
   {
+    path:'tipousuario/editar/:id',
+    component: FormTipousuarioComponent
+  },
+  {
+    path:'tipousuario/agregar',
+    component: FormTipousuarioComponent
+  },
+  {
     path:'usuario',
     component: UsuarioPrincipalComponent
+  },
+  {
+    path:'usuario/agregar',
+    component: FormUsuarioComponent
+  },
+  {
+    path:'usuario/editar/:id',
+    component: FormUsuarioComponent
   },
   {
     path:'login',

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tipousuario-principal',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class TipousuarioPrincipalComponent {
 
-  
+  constructor(private router:Router){
+
+  }
+
+  agregar(){
+    this.router.navigate(["/tipousuario/agregar"])
+  }
 
 }
