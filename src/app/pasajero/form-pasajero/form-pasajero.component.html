@@ -1,1 +1,40 @@
-<p>form-pasajero works!</p>
+<h2 class="text-center text-dark">{{titulo}}</h2>
+<form>
+    <div class="mb-1">
+        <label>Nombre</label>
+        <input type="text" class="form-control" />
+    </div>
+    <div>
+        <label>Apellido Paterno</label>
+        <input type="text" class="form-control" />
+    </div>
+    <div>
+        <label>Apellido Materno</label>
+        <input type="text" class="form-control" />
+    </div>
+    <div>
+        <label>Tipo Documento</label>
+        <select class="form-control">
+            <option value="">--Seleccione--</option>
+            <option *ngFor="let tipodocumento of tipodocumentos" [value]="tipodocumento.idtipodoc" >{{tipodocumento.nobretipodoc}}</option>
+        </select>
+    </div>
+    <div>
+        <label>Numero Documento</label>
+        <input type="text" class="form-control" />
+    </div>
+    <div>
+        <label>Correo</label>
+        <input type="text" class="form-control" />
+    </div>
+    <div>
+        <label>Telefono</label>
+        <input type="text" class="form-control" />
+    </div>
+    <div class="mt-2 mb-2">
+        <button type="submit" class="btn btn-success m-1">Guardar</button>
+        <button type="button" class="btn btn-danger" (click)="regresar()">Regresar</button>
+    </div>
+
+
+</form>

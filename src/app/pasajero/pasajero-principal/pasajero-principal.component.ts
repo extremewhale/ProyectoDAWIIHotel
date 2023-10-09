@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pasajero-principal',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./pasajero-principal.component.css']
 })
 export class PasajeroPrincipalComponent {
+  
+  constructor(private router:Router){
 
+  }
+  agregar(){
+    this.router.navigate(["pasajero/agregar"])
+  }
 }

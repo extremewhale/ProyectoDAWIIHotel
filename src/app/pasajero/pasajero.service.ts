@@ -1,10 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Pasajero } from './interfaces/Pasajero';
+import { TipoDocumento } from './interfaces/TipoDocumento';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PasajeroService {
+  private _tipodocumentos:TipoDocumento[]=[
+    {
+      idtipodoc:1,
+      nobretipodoc:"DNI"
+    },
+    {
+      idtipodoc:2,
+      nobretipodoc:"Carnet Extranjeria"
+    },
+    {
+      idtipodoc:3,
+      nobretipodoc:"Pasaporte"
+    }
+  ]
   private _pasajeros:Pasajero[]=[
     {
       idpasajero:1,
@@ -50,6 +65,10 @@ export class PasajeroService {
 
   get pasajeros():Pasajero[]{
     return [...this._pasajeros]
+  }
+
+  get tipodocumentos():TipoDocumento[]{
+    return [...this._tipodocumentos]
   }
 
   constructor() { 
