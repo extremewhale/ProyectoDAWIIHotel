@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+//INICIO servicio
+import{CargarScriptsService} from './cargar-scripts.service';
+//Fin Servicio
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +31,9 @@ import { HabitacionModule } from './habitacion/habitacion.module';
     LoginModule,
     HabitacionModule
   ],
-  providers: [],
+  providers: [
+    CargarScriptsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
