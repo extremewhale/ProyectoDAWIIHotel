@@ -4,6 +4,7 @@ import { Piso } from '../interfaces/Piso';
 import { EstadoHabitacion } from '../interfaces/EstadoHabitacion';
 import { TipoHabitacion } from '../interfaces/TipoHabitacion';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Habitacion } from '../interfaces/Habitacion';
 
 @Component({
   selector: 'app-form-habitacion',
@@ -13,13 +14,26 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class FormHabitacionComponent {
 
   titulo:string=""
-  
+  habitacion:Habitacion={
+    roomId:        0,
+    roomNumber:    "",
+    roomPrice:     0,
+    roomStatusId:  0,
+    floorId:       0,
+    roomTypeId:    0,
+    roomActive:    ""
+  }
   
   constructor(private habitacionService:HabitacionService,private routes:Router,
     private activateRoute:ActivatedRoute){
      var id= activateRoute.snapshot.params["id"]
       if(id==undefined) this.titulo="Agregar Habitación"
-      else this.titulo="Editar Habitación"
+      else  {
+        this.titulo="Editar Habitación"
+        habitacionService.obtenerHabitacion(Number(id)).subscribe(res=>{
+          this.habitacion=res;
+        })
+      }
     }
 
   get pisos():Piso[]{
@@ -36,5 +50,8 @@ export class FormHabitacionComponent {
 
   regresar(){
     this.routes.navigate(["habitacion"])
+  }
+  guardar(){
+    
   }
 }

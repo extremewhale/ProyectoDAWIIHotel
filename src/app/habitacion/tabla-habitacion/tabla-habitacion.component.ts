@@ -19,7 +19,7 @@ export class TablaHabitacionComponent {
   }
 
   editar(id:number){
-    this.routes.navigate(["habitacion/editar/id"])
+    this.routes.navigate(["habitacion/editar/"+id])
   }
 
 }

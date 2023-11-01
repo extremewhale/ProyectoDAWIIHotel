@@ -5,6 +5,7 @@ import { Piso } from './interfaces/Piso';
 import { TipoHabitacion } from './interfaces/TipoHabitacion';
 import { HttpClient } from '@angular/common/http';
 import urlBase from '../contantes';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -31,35 +32,39 @@ export class HabitacionService {
     return [...this._tipohabitaciones];
   }
 
-  obtenerEstadoHabitacion(){
+  listarEstadoHabitacion(){
     this._http.get<EstadoHabitacion[]>(urlBase+"/estateroom").subscribe(res=>{
         this._estadohabitaciones=res;
     })
   }
 
   
-  obtenerPiso(){
+  listarPiso(){
     this._http.get<Piso[]>(urlBase+"/floor").subscribe(res=>{
         this._pisos=res;
     })
   }
 
-  obtenerTipoHabitacion(){
+  listarTipoHabitacion(){
     this._http.get<TipoHabitacion[]>(urlBase+"/roomtypes").subscribe(res=>{
         this._tipohabitaciones=res;
     })
   }
 
-  obtenerHabitacion(){
+  listarHabitacion(){
     this._http.get<Habitacion[]>(urlBase+"/room").subscribe(res=>{
       this._habitacion=res;
     })
   }
 
+  obtenerHabitacion(id:number) : Observable<Habitacion>  {
+    return this._http.get<Habitacion>(urlBase+"/room/"+id);
+  }
+
   constructor(private _http:HttpClient) {
-    this.obtenerEstadoHabitacion()
-    this.obtenerPiso();
-    this.obtenerTipoHabitacion();
-    this.obtenerHabitacion()
+    this.listarEstadoHabitacion()
+    this.listarPiso();
+    this.listarTipoHabitacion();
+    this.listarHabitacion()
    }
 }

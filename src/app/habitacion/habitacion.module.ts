@@ -4,7 +4,7 @@ import { HabitacionPrincipalComponent } from './habitacion-principal/habitacion-
 import { TablaHabitacionComponent } from './tabla-habitacion/tabla-habitacion.component';
 import { HabitacionService } from './habitacion.service';
 import { FormHabitacionComponent } from './form-habitacion/form-habitacion.component';
-
+import {FormsModule} from "@angular/forms"
 
 
 @NgModule({
@@ -14,6 +14,7 @@ import { FormHabitacionComponent } from './form-habitacion/form-habitacion.compo
     FormHabitacionComponent
   ],
   imports: [
+    FormsModule,
     CommonModule
   ],
   providers:[

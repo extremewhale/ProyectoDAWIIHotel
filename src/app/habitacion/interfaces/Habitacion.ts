@@ -10,9 +10,9 @@ export interface Habitacion {
     floorId:       number;
     roomTypeId:    number;
     roomActive:    string;
-    objRoomStatus: EstadoHabitacion;
-    objFloor:      Piso;
-    objRoomType:   TipoHabitacion;
+    objRoomStatus?: EstadoHabitacion;
+    objFloor?:      Piso;
+    objRoomType?:   TipoHabitacion;
 }
 
 

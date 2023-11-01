@@ -12,9 +12,9 @@
     <tbody>
         <tr *ngFor="let habitacion of habitaciones">
             <td>{{habitacion.roomNumber}}</td>
-            <td>{{habitacion.objFloor.desc}}</td>
-            <td>{{habitacion.objRoomType.name}}</td>
-            <td>{{habitacion.objRoomStatus.name}}</td>
+            <td>{{habitacion.objFloor?.desc}}</td>
+            <td>{{habitacion.objRoomType?.name}}</td>
+            <td>{{habitacion.objRoomStatus?.name}}</td>
             <td>S/ {{habitacion.roomPrice}}</td>
             <td>
                 <button class="btn btn-primary m-1" (click)="editar(habitacion.roomId)" >
