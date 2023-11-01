@@ -4,7 +4,7 @@ import { PasajeroPrincipalComponent } from './pasajero-principal/pasajero-princi
 import { TablaPasajeroComponent } from './tabla-pasajero/tabla-pasajero.component';
 import { PasajeroService } from './pasajero.service';
 import { FormPasajeroComponent } from './form-pasajero/form-pasajero.component';
-
+import {FormsModule} from "@angular/forms"
 
 
 @NgModule({
@@ -15,6 +15,7 @@ import { FormPasajeroComponent } from './form-pasajero/form-pasajero.component';
     
   ],
   imports: [
+    FormsModule,
     CommonModule
   ],
   providers:[

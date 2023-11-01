@@ -1,4 +1,4 @@
-import { DocType } from "./TipoDocumento";
+import { TipoDocumento } from "./TipoDocumento";
 export interface Pasajero {
     idpas:     number;
     idtpodoc:  number;
@@ -9,7 +9,7 @@ export interface Pasajero {
     email:     string;
     phone:     string;
     active:    string;
-    docType:   DocType;
+    docType?:   TipoDocumento;
 }
 
 

@@ -1,35 +1,35 @@
 <h2 class="text-center text-dark">{{titulo}}</h2>
-<form>
+<form  (ngSubmit)="guardar()">
     <div class="mb-1">
         <label>Nombre</label>
-        <input type="text" class="form-control" />
+        <input [(ngModel)]="pasajero.names" type="text" name="names"  class="form-control" />
     </div>
     <div>
         <label>Apellido Paterno</label>
-        <input type="text" class="form-control" />
+        <input type="text"  [(ngModel)]="pasajero.lastname1" name="lastname1"  class="form-control" />
     </div>
     <div>
         <label>Apellido Materno</label>
-        <input type="text" class="form-control" />
+        <input type="text"  [(ngModel)]="pasajero.lastname2" name="lastname2"  class="form-control" />
     </div>
     <div>
         <label>Tipo Documento</label>
-        <select class="form-control">
+        <select name="idtpodoc"  class="form-control"  [(ngModel)]="pasajero.idtpodoc" >
             <option value="">--Seleccione--</option>
-            <option *ngFor="let tipodocumento of tipodocumentos" [value]="tipodocumento.idtipodoc" >{{tipodocumento.nobretipodoc}}</option>
+            <option *ngFor="let tipodocumento of tipodocumentos" [value]="tipodocumento.idTypeDoc" >{{tipodocumento.desc}}</option>
         </select>
     </div>
     <div>
         <label>Numero Documento</label>
-        <input type="text" class="form-control" />
+        <input [(ngModel)]="pasajero.nrodoc" type="text" class="form-control" name="nrodoc"  />
     </div>
     <div>
         <label>Correo</label>
-        <input type="text" class="form-control" />
+        <input  [(ngModel)]="pasajero.email"  type="text" class="form-control" name="email"  />
     </div>
     <div>
         <label>Telefono</label>
-        <input type="text" class="form-control" />
+        <input [(ngModel)]="pasajero.phone" type="text" class="form-control" name="phone"  />
     </div>
     <div class="mt-2 mb-2">
         <button type="submit" class="btn btn-success m-1">Guardar</button>

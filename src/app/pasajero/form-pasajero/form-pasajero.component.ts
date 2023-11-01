@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PasajeroService } from '../pasajero.service';
+import { Pasajero } from '../interfaces/Pasajero';
 
 @Component({
   selector: 'app-form-pasajero',
@@ -9,10 +10,27 @@ import { PasajeroService } from '../pasajero.service';
 })
 export class FormPasajeroComponent {
   titulo:string=""
+  pasajero:Pasajero={
+    names:"",
+    lastname1:"",
+    lastname2:"",
+    nrodoc:"",
+    idtpodoc:0,
+    email:"",
+    idpas:0,
+    active:"1",
+    phone:""
+    };
   
   constructor(private router:Router,private pasajeroService:PasajeroService,private routes:ActivatedRoute){
-     if(routes.snapshot.params["id"]==undefined) this.titulo="Agregar Pasajero"
-     else this.titulo="Editar Pasajero"
+     var id:string=routes.snapshot.params["id"];
+     if(id==undefined) this.titulo="Agregar Pasajero"
+     else{
+      this.titulo="Editar Pasajero"
+      this.pasajeroService.obtenerPasajero(Number(id)).subscribe(res=>{
+          this.pasajero=res;
+      })
+     } 
   }
 
   get tipodocumentos(){
@@ -21,6 +39,10 @@ export class FormPasajeroComponent {
   
   regresar(){
     this.router.navigate(["pasajero"])
+  }
+
+  guardar(){
+
   }
 
 
