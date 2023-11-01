@@ -11,7 +11,7 @@
     <div>
         <label>Estado Habitación</label>
         <select  [(ngModel)]="habitacion.roomStatusId" class="form-control"  name="roomStatusId" >
-            <option>--Seleccione--</option>
+            <option value="0">--Seleccione--</option>
             <option *ngFor="let estadohabitacion of estadohabitaciones"  [value]="estadohabitacion.idestroom">{{estadohabitacion.name}}</option>
         </select>
     </div>
@@ -19,7 +19,7 @@
     <div>
         <label>Piso</label>
         <select  [(ngModel)]="habitacion.floorId"  class="form-control" name="floorId"   >
-            <option value="">--Seleccione--</option>
+            <option value="0">--Seleccione--</option>
             <option *ngFor="let piso of pisos"  [value]="piso.idfloor" >{{piso.desc}}</option>
         </select>
     </div>
@@ -27,7 +27,7 @@
     <div>
         <label>Tipo Habitación</label>
         <select [(ngModel)]="habitacion.roomTypeId"  class="form-control" name="roomTypeId"  >
-            <option value="">--Seleccione--</option>
+            <option value="0">--Seleccione--</option>
             <option *ngFor="let tipohabitacion of tipohabitaciones" [value]="tipohabitacion.idroomtype"  >{{tipohabitacion.name}}</option>
         </select>
     </div>

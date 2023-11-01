@@ -1,9 +1,9 @@
 <h2 class="text-center text-dark">{{titulo}}</h2>
 <form (ngSubmit)="guardar()">
-    <div class="mb-1">
+    <div class="mb-1" *ngIf="usuario.iduser==0">
         <label>Nombre Persona</label>
         <select name="idpassenger" [(ngModel)]="usuario.idpassenger" class="form-control">
-            <option>--Seleccione--</option>
+            <option value="0">--Seleccione--</option>
             <option *ngFor="let pasajero of pasajeros"  [value]="pasajero.idpas" >{{pasajero.names+' '+pasajero.lastname1+' '+pasajero.lastname2}}</option>
         </select>
     </div>
@@ -11,10 +11,16 @@
         <label>Nombre Usuario</label>
         <input  name="user" [(ngModel)]="usuario.user"  type="text" class="form-control" />
     </div>
+
+    <div *ngIf="usuario.iduser==0">
+        <label>Contraseña</label>
+        <input  name="password" [(ngModel)]="usuario.password"  type="password" class="form-control" />
+    </div>
+
     <div>
         <label>Tipo Usuario</label>
         <select  name="usertpe"  [(ngModel)]="usuario.usertpe" class="form-control">
-            <option>--Seleccione--</option>
+            <option value="0">--Seleccione--</option>
             <option *ngFor="let tipousuario of tipousuarios"  [value]="tipousuario.userTypeId"  >{{tipousuario.name}}</option>
         </select>
     </div>

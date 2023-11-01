@@ -15,7 +15,7 @@
     <div>
         <label>Tipo Documento</label>
         <select name="idtpodoc"  class="form-control"  [(ngModel)]="pasajero.idtpodoc" >
-            <option value="">--Seleccione--</option>
+            <option value="0">--Seleccione--</option>
             <option *ngFor="let tipodocumento of tipodocumentos" [value]="tipodocumento.idTypeDoc" >{{tipodocumento.desc}}</option>
         </select>
     </div>
