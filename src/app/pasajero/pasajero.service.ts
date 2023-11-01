@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Pasajero } from './interfaces/Pasajero';
-import { TipoDocumento } from './interfaces/TipoDocumento';
+import { DocType } from './interfaces/TipoDocumento';
 import urlBase from "../contantes"
 import { HttpClient } from '@angular/common/http';
 @Injectable({
@@ -13,20 +13,7 @@ export class PasajeroService {
     this.obtenerDatos();
   }
 
-  private _tipodocumentos:TipoDocumento[]=[
-    {
-      idtipodoc:1,
-      nobretipodoc:"DNI"
-    },
-    {
-      idtipodoc:2,
-      nobretipodoc:"Carnet Extranjeria"
-    },
-    {
-      idtipodoc:3,
-      nobretipodoc:"Pasaporte"
-    }
-  ]
+  private _tipodocumentos:DocType[]=[]
   private _pasajeros:Pasajero[]=[]
 
   get pasajeros():Pasajero[]{
@@ -40,7 +27,7 @@ export class PasajeroService {
     })
   }
 
-  get tipodocumentos():TipoDocumento[]{
+  get tipodocumentos():DocType[]{
     return [...this._tipodocumentos]
   }
 

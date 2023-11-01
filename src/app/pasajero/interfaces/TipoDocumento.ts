@@ -1,4 +1,4 @@
-export interface TipoDocumento{
-    idtipodoc:number,
-    nobretipodoc:string
+export interface DocType {
+    idTypeDoc: number;
+    desc:      string;
 }

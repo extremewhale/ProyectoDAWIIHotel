@@ -13,7 +13,7 @@
     <tbody>
         
         <tr *ngFor="let pasajero of pasajeros">
-            <td>{{pasajero.names}}</td>
+            <td>{{pasajero.names+' '+pasajero.lastname1+' '+pasajero.lastname2}}</td>
             <td>{{pasajero.docType.desc}}</td>
             <td>{{pasajero.nrodoc}}</td>
             <td>{{pasajero.email}}</td>

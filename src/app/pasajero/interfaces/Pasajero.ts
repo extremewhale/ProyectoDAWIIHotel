@@ -1,3 +1,4 @@
+import { DocType } from "./TipoDocumento";
 export interface Pasajero {
     idpas:     number;
     idtpodoc:  number;
@@ -11,7 +12,4 @@ export interface Pasajero {
     docType:   DocType;
 }
 
-export interface DocType {
-    idTypeDoc: number;
-    desc:      string;
-}
+
