@@ -10,13 +10,13 @@
     </thead>
     <tbody>
       <tr *ngFor="let usuario of usuarios">
-        <td>{{ usuario.nombreusuario }}</td>
-        <td>{{ usuario.nombrepersona }}</td>
-        <td>{{ usuario.tipousuario }}</td>
+        <td>{{ usuario.user }}</td>
+        <td>{{ usuario.objPassenger.names+' '+usuario.objPassenger.lastname1+' '+usuario.objPassenger.lastname2 }}</td>
+        <td>{{ usuario.objuserType.name }}</td>
         <td>
           <button
             class="btn btn-primary m-1"
-            (click)="editar(usuario.idusuario)"
+            (click)="editar(usuario.iduser)"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

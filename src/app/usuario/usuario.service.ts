@@ -1,46 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from './interface/Usuario';
+import { HttpClient } from '@angular/common/http';
+import urlBase from '../contantes';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
- private _usuarios:Usuario[]=[
-  {
-    idusuario:1,
-    nombreusuario:"eroldan",
-    nombrepersona:"Elifio Roldan Huayllasco",
-    tipousuario:"Administrador"
-  },
-  {
-    idusuario:2,
-    nombreusuario:"ftorres",
-    nombrepersona:"Felix Torres Terreros",
-    tipousuario:"Gerente"
-  },
-  {
-    idusuario:3,
-    nombreusuario:"hpastor",
-    nombrepersona:"Hugo Pastor Vasquez",
-    tipousuario:"Administrador"
-  },
-  {
-    idusuario:4,
-    nombreusuario:"lcalderon",
-    nombrepersona:"Luis Calderon Tocto",
-    tipousuario:"Supervisor"
-  },
-  {
-    idusuario:5,
-    nombreusuario:"carismendiz",
-    nombrepersona:"Cristhofer Arismendiz Umbo",
-    tipousuario:"Supervisor"
-  }
- ]
+ private _usuarios:Usuario[]=[]
 
  get usuarios():Usuario[]{
   return [...this._usuarios]
  }
 
-  constructor() { }
+ obtenerUsuarios(){
+  this._http.get<Usuario[]>(urlBase+"/user").subscribe(res=>{
+     this._usuarios=res
+  })
+ }
+
+  constructor(private _http:HttpClient) {
+    this.obtenerUsuarios()
+   }
 }
