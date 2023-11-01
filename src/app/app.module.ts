@@ -15,6 +15,7 @@ import { LoginModule } from './login/login.module';
 import { TablaHabitacionComponent } from './habitacion/tabla-habitacion/tabla-habitacion.component';
 import { HabitacionPrincipalComponent } from './habitacion/habitacion-principal/habitacion-principal.component';
 import { HabitacionModule } from './habitacion/habitacion.module';
+import {HttpClientModule} from "@angular/common/http"
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HabitacionModule } from './habitacion/habitacion.module';
     LoginPrincipalComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     PasajeroModule,
