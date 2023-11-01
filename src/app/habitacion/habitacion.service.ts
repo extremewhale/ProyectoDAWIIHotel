@@ -12,20 +12,7 @@ import urlBase from '../contantes';
 export class HabitacionService {
   private _estadohabitaciones:EstadoHabitacion[]=[]
   private _pisos:Piso[]=[]
-  private _tipohabitaciones:TipoHabitacion[]=[
-      {
-        idtipohabitacion:1,
-        nombretipohabitacion:"Simple"
-      },
-      {
-        idtipohabitacion:2,
-        nombretipohabitacion:"Doble"
-      },
-      {
-        idtipohabitacion:3,
-        nombretipohabitacion:"Matrimonial"
-      }
-  ]
+  private _tipohabitaciones:TipoHabitacion[]=[]
   private _habitacion: Habitacion[]=[
     {
       idhabitacion:1,
@@ -98,8 +85,15 @@ export class HabitacionService {
     })
   }
 
+  obtenerTipoHabitacion(){
+    this._http.get<TipoHabitacion[]>(urlBase+"/roomtypes").subscribe(res=>{
+        this._tipohabitaciones=res;
+    })
+  }
+
   constructor(private _http:HttpClient) {
     this.obtenerEstadoHabitacion()
     this.obtenerPiso();
+    this.obtenerTipoHabitacion();
    }
 }

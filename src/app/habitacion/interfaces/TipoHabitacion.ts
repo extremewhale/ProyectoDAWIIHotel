@@ -1,4 +1,6 @@
-export interface TipoHabitacion{
-    idtipohabitacion:number,
-    nombretipohabitacion:string
+export interface TipoHabitacion {
+    idroomtype: number;
+    name:       string;
+    desc:       string;
+    active:     string;
 }
