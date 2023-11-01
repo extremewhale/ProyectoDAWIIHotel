@@ -1,24 +1,15 @@
 import { Injectable } from '@angular/core';
 import TipoUsuario from './interface/TipoUsuario';
 import { Menu } from './interface/Menu';
+import { HttpClient } from '@angular/common/http';
+import urlBase from '../contantes';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TipousuarioService {
 
-  private _tipousuarios: TipoUsuario[] = [
-    {
-      idtipousuario:1,
-      nombretipousuario:"Administrador",
-      descripciontipousuario:"Administra la aplicación"
-    },
-    {
-      idtipousuario:2,
-      nombretipousuario:"Gerente",
-      descripciontipousuario:"Consulta las transacciones"
-    }
-   ]
+  private _tipousuarios: TipoUsuario[] = []
 
    private _menus: Menu[]= [
     {
@@ -54,6 +45,12 @@ export class TipousuarioService {
 
    ]
 
+   obtenerTipoUsuario(){
+    this._http.get<TipoUsuario[]>(urlBase+"/usertypes").subscribe((res)=>{
+       this._tipousuarios=res;
+    })
+   }
+
 
    get tipousuarios():TipoUsuario[]{
      return [...this._tipousuarios];
@@ -63,7 +60,7 @@ export class TipousuarioService {
     return [...this._menus]
    }
 
-  constructor() { 
-
+  constructor(private _http:HttpClient) { 
+    this.obtenerTipoUsuario();
   }
 }

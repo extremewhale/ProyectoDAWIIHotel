@@ -1,7 +1,5 @@
-interface TipoUsuario{
-    idtipousuario:number,
-    nombretipousuario:string,
-    descripciontipousuario:string
+export default interface TipoUsuario {
+    userTypeId: number;
+    name:       string;
+    active:     string;
 }
-
-export default TipoUsuario;

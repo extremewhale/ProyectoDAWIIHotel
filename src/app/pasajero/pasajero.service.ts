@@ -21,7 +21,7 @@ export class PasajeroService {
   }
 
   obtenerDatos(){
-    this._http.get(urlBase+"/passenger").subscribe((res:any) =>{
+    this._http.get<Pasajero[]>(urlBase+"/passenger").subscribe((res) =>{
       console.log(res)
       this._pasajeros=res;
     })
