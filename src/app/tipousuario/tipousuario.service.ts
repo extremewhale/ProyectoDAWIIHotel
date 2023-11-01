@@ -3,7 +3,7 @@ import TipoUsuario from './interface/TipoUsuario';
 import { Menu } from './interface/Menu';
 import { HttpClient } from '@angular/common/http';
 import urlBase from '../contantes';
-
+import {Observable} from "rxjs"
 @Injectable({
   providedIn: 'root'
 })
@@ -45,10 +45,14 @@ export class TipousuarioService {
 
    ]
 
-   obtenerTipoUsuario(){
+   listarTipoUsuario(){
     this._http.get<TipoUsuario[]>(urlBase+"/usertypes").subscribe((res)=>{
        this._tipousuarios=res;
     })
+   }
+
+   obtenerTipoUsuario(id:number) :Observable<TipoUsuario> {
+    return this._http.get<TipoUsuario>(urlBase+"/usertypes/"+id);
    }
 
 
@@ -61,6 +65,6 @@ export class TipousuarioService {
    }
 
   constructor(private _http:HttpClient) { 
-    this.obtenerTipoUsuario();
+    this.listarTipoUsuario();
   }
 }

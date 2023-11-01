@@ -1,21 +1,21 @@
 <h2 class="text-center text-dark">{{titulo}}</h2>
-<form>
+<form (ngSubmit)="guardar()">
     <div class="mb-1">
         <label>Nombre Persona</label>
-        <select class="form-control">
+        <select name="idpassenger" [(ngModel)]="usuario.idpassenger" class="form-control">
             <option>--Seleccione--</option>
-            <option *ngFor="let pasajero of pasajeros">{{pasajero.names+' '+pasajero.lastname1+' '+pasajero.lastname2}}</option>
+            <option *ngFor="let pasajero of pasajeros"  [value]="pasajero.idpas" >{{pasajero.names+' '+pasajero.lastname1+' '+pasajero.lastname2}}</option>
         </select>
     </div>
     <div>
         <label>Nombre Usuario</label>
-        <input type="text" class="form-control" />
+        <input  name="user" [(ngModel)]="usuario.user"  type="text" class="form-control" />
     </div>
     <div>
         <label>Tipo Usuario</label>
-        <select class="form-control">
+        <select  name="usertpe"  [(ngModel)]="usuario.usertpe" class="form-control">
             <option>--Seleccione--</option>
-            <option *ngFor="let tipousuario of tipousuarios">{{tipousuario.name}}</option>
+            <option *ngFor="let tipousuario of tipousuarios"  [value]="tipousuario.userTypeId"  >{{tipousuario.name}}</option>
         </select>
     </div>
 

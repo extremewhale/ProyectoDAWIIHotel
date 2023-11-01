@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PasajeroService } from 'src/app/pasajero/pasajero.service';
 import { TipousuarioService } from 'src/app/tipousuario/tipousuario.service';
+import { Usuario } from '../interface/Usuario';
+import { UsuarioService } from '../usuario.service';
 
 @Component({
   selector: 'app-form-usuario',
@@ -10,11 +12,25 @@ import { TipousuarioService } from 'src/app/tipousuario/tipousuario.service';
 })
 export class FormUsuarioComponent {
   titulo:string=""
-  
-  constructor(private tipousuarioService:TipousuarioService,private pasajeroService:PasajeroService,private routes:Router ,private activateRoute:ActivatedRoute){
+  usuario:Usuario={
+    idpassenger:0,
+    iduser:0,
+    password:"",
+    user:"",
+    usertpe:0,
+    active:"1"
+  }
+  constructor(private tipousuarioService:TipousuarioService,private pasajeroService:PasajeroService,private routes:Router ,private activateRoute:ActivatedRoute,
+    private usuarioService:UsuarioService){
       var param=this.activateRoute.snapshot.params["id"]
       if(param==undefined) this.titulo="Nuevo Usuario"
-      else this.titulo="Editar Usuario"
+      else 
+      {
+        this.titulo="Editar Usuario"
+        this.usuarioService.obtenerUsuario(Number(param)).subscribe(res=>{
+          this.usuario= res;
+        })
+      }
   }
 
   get tipousuarios(){
@@ -27,5 +43,9 @@ export class FormUsuarioComponent {
   
   regresar(){
     this.routes.navigate(["usuario"])
+  }
+
+  guardar(){
+
   }
 }

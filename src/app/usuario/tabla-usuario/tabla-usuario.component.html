@@ -11,8 +11,8 @@
     <tbody>
       <tr *ngFor="let usuario of usuarios">
         <td>{{ usuario.user }}</td>
-        <td>{{ usuario.objPassenger.names+' '+usuario.objPassenger.lastname1+' '+usuario.objPassenger.lastname2 }}</td>
-        <td>{{ usuario.objuserType.name }}</td>
+        <td>{{ usuario.objPassenger?.names+' '+usuario.objPassenger?.lastname1+' '+usuario.objPassenger?.lastname2 }}</td>
+        <td>{{ usuario.objuserType?.name }}</td>
         <td>
           <button
             class="btn btn-primary m-1"

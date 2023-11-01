@@ -7,6 +7,6 @@ export interface Usuario {
     password:     string;
     usertpe:      number;
     active:       string;
-    objuserType:  TipoUsuario;
-    objPassenger: Pasajero;
+    objuserType?:  TipoUsuario;
+    objPassenger?: Pasajero;
 }

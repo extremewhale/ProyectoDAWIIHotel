@@ -4,7 +4,7 @@ import { TipousuarioPrincipalComponent } from './tipousuario-principal/tipousuar
 import { TablaTipousuarioComponent } from './tabla-tipousuario/tabla-tipousuario.component';
 import { TipousuarioService } from './tipousuario.service';
 import { FormTipousuarioComponent } from './form-tipousuario/form-tipousuario.component';
-
+import {FormsModule} from "@angular/forms"
 
 
 @NgModule({
@@ -14,6 +14,7 @@ import { FormTipousuarioComponent } from './form-tipousuario/form-tipousuario.co
     FormTipousuarioComponent
   ],
   imports: [
+    FormsModule,
     CommonModule
   ],
   providers:[
