@@ -1,13 +1,18 @@
-export interface Habitacion{
-    idhabitacion:number,
-    numerohabitacion:string,
-    precio:number,
-    estado:string,
-    piso:string,
-    tipohabitacion:string
-   // numerohabitacion:"N°0001",
-   // precio:50,
-   // estado:"Mantenimiento",
-    //piso:"Primero",
-    //tipohabitacion:"Matrimonial"
+import { EstadoHabitacion } from "./EstadoHabitacion";
+import { Piso } from "./Piso";
+import { TipoHabitacion } from "./TipoHabitacion";
+
+export interface Habitacion {
+    roomId:        number;
+    roomNumber:    string;
+    roomPrice:     number;
+    roomStatusId:  number;
+    floorId:       number;
+    roomTypeId:    number;
+    roomActive:    string;
+    objRoomStatus: EstadoHabitacion;
+    objFloor:      Piso;
+    objRoomType:   TipoHabitacion;
 }
+
+
