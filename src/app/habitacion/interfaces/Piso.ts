@@ -1,4 +1,5 @@
-export interface Piso{
-    idpiso:number,
-    descpiso:string
+export interface Piso {
+    idfloor: number;
+    desc:    string;
+    active:  string;
 }

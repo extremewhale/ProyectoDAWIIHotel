@@ -3,39 +3,15 @@ import { Habitacion } from './interfaces/Habitacion';
 import { EstadoHabitacion } from './interfaces/EstadoHabitacion';
 import { Piso } from './interfaces/Piso';
 import { TipoHabitacion } from './interfaces/TipoHabitacion';
+import { HttpClient } from '@angular/common/http';
+import urlBase from '../contantes';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HabitacionService {
-  private _estadohabitaciones:EstadoHabitacion[]=[
-    {
-      idestadohabitacion:1,
-      nombreestadohabitacion:"Optimo Estado"
-    },
-    {
-      idestadohabitacion:2,
-      nombreestadohabitacion:"Mantenimiento"
-    },
-    {
-      idestadohabitacion:3,
-      nombreestadohabitacion:"Inoperativo"
-    }
-  ]
-  private _pisos:Piso[]=[
-    {
-      idpiso:1,
-      descpiso:"1° Piso"
-    },
-    {
-      idpiso:2,
-      descpiso:"2° Piso"
-    },
-    {
-      idpiso:3,
-      descpiso:"3° Piso"
-    }
-  ]
+  private _estadohabitaciones:EstadoHabitacion[]=[]
+  private _pisos:Piso[]=[]
   private _tipohabitaciones:TipoHabitacion[]=[
       {
         idtipohabitacion:1,
@@ -109,5 +85,21 @@ export class HabitacionService {
     return [...this._tipohabitaciones];
   }
 
-  constructor() { }
+  obtenerEstadoHabitacion(){
+    this._http.get<EstadoHabitacion[]>(urlBase+"/estateroom").subscribe(res=>{
+        this._estadohabitaciones=res;
+    })
+  }
+
+  
+  obtenerPiso(){
+    this._http.get<Piso[]>(urlBase+"/floor").subscribe(res=>{
+        this._pisos=res;
+    })
+  }
+
+  constructor(private _http:HttpClient) {
+    this.obtenerEstadoHabitacion()
+    this.obtenerPiso();
+   }
 }

@@ -1,4 +1,4 @@
-export interface EstadoHabitacion{
-    idestadohabitacion:number,
-    nombreestadohabitacion:string
+export interface EstadoHabitacion {
+    idestroom: number;
+    name:      string;
 }

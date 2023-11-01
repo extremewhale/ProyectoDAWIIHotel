@@ -12,7 +12,7 @@
         <label>Estado Habitación</label>
         <select class="form-control">
             <option value="">--Seleccione--</option>
-            <option *ngFor="let estadohabitacion of estadohabitaciones">{{estadohabitacion.nombreestadohabitacion}}</option>
+            <option *ngFor="let estadohabitacion of estadohabitaciones">{{estadohabitacion.name}}</option>
         </select>
     </div>
 
@@ -20,7 +20,7 @@
         <label>Piso</label>
         <select class="form-control">
             <option value="">--Seleccione--</option>
-            <option *ngFor="let piso of pisos">{{piso.descpiso}}</option>
+            <option *ngFor="let piso of pisos">{{piso.desc}}</option>
         </select>
     </div>
 
